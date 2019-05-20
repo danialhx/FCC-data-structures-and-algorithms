@@ -31,3 +31,10 @@ Tuts McGee(aka Tutorials)
   <li>add and delete items</li>
 </ol>
 <hr>
+
+<p>04 Queue</p><br>
+<p>similar to sets but 1stin, 1st out. sets are 1stin, last out</p>
+<ol>
+  <li>Queues with push, shifts</li>
+  <li>2nd Queue a bit complicated(pq)</li>
+</ol>
