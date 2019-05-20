@@ -1,0 +1,117 @@
+Notes for https://www.youtube.com/watch?v=t2CEgPsws3U
+
+Exercise 2 sets
+
+1. "this." - strict mode and non-strict mode
+
+ - Global Context(outside of any function)
+  - *globalThis 
+ - Function context(inside a function
+
+if this in function will recall the function as a whole, if this in global will be undefined. maybe it is because it didn't bind to something.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
+
+another eg. for this
+
+var person = {
+	firstName : "John",
+	lastName  : "Doe",
+	id	  : 5566,
+	lastName  : function{
+	return this.firstName + " " + this.lastName
+	}
+};
+//will return a "John Doe" if invoked only lastName.
+// aka "object binding method". simple example. actually needs a little bit more code. 
+//this is like a default binding, doesn't work in global, works well for functions
+
+//Event handling, by using "this" in the function, u can write a function to handle an event, example given in ww3 is like a script that will remove a button, with this in the remove the button code, you can immediately make the code to work on itself.
+
+
+2. .has
+//returns a bollean, true or false
+example
+
+const set 1 = new Set([1,2,3,4,5])
+
+console.log(set1.has(1));
+//will return true
+
+console.log(set1.has(2));
+//will return true
+console.log(set1.has(6));
+//will return false
+
+works only to immediate reference, 2 layers it doesn't consider. 
+eg, 
+var set1 = (obj1)
+var obj1 = {key:1}
+
+//if .has obj1,
+set1.has(obj1) //will return true,
+
+//if .has{key:1}
+set1.has({key:}) //will return false,
+
+Syntax > $(selector).has(element)
+
+3. .values
+Object.values()
+*refer keys:values
+//can call all the values in the object, in an array form
+
+VV
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.values(object1));
+//  output: Array ["somestring", 42, false]
+^^
+
+4. .indexOf
+
+example:
+var str = "Hello world, welcome to the universe.";
+var n = str.indexOf("welcome");
+>>13
+
+//string.indexOf(searchvalue, start) - will call first index of element. starts from zeroth.
+
+//will return -1 if not available.
+//str.indexOf("e",5) - look for e from position 5, 
+
+5. .remove //will remove the whole element
+
+6. .size //like .length for set in Map/set object
+
+7. new 
+
+will create a blank,plain js object. 
+
+var setA = new mySet();
+
+8. .add() //will increase an item to the array. similar to .append() 
+
+9. delete // will delete a property from an object, and return undefined as object property.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
