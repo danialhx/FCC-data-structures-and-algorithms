@@ -1,0 +1,11 @@
+Notes for https://www.youtube.com/watch?v=t2CEgPsws3U
+
+Exercise 4 Queue
+
+first in first out, if stack-first in, Last Out.
+
+
+functions
+enqueue - push to the 
+dequeue - use shift will remove from 0 index of the array;
+
