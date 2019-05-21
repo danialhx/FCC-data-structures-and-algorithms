@@ -38,5 +38,12 @@ Tuts McGee(aka Tutorials)
   <li>Queues with push, shifts, et(q)</li>
   <li>2nd Queue and array, an will queue in according to 2nd element on array as a count(pq)</li>
 </ol>
+<hr>
 
+<p>05 Binary Search Tree</p>
+<ol>
+  <li>tba</li>
+  <li>tba</li>
+  <li>tba</li>
+</ol>
 <hr>
