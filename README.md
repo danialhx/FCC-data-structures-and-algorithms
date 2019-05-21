@@ -35,6 +35,8 @@ Tuts McGee(aka Tutorials)
 <p>04 Queue</p><br>
 <p>similar to sets but 1stin, 1st out. sets are 1stin, last out</p>
 <ol>
-  <li>Queues with push, shifts</li>
-  <li>2nd Queue a bit complicated(pq)</li>
+  <li>Queues with push, shifts, et(q)</li>
+  <li>2nd Queue and array, an will queue in according to 2nd element on array as a count(pq)</li>
 </ol>
+
+<hr>
