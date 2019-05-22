@@ -1,7 +1,7 @@
 /*Binary Search Tree*/
 
 class Node {
-    constructor(data, left = null, right = null){   //
+    constructor(data, left = null, right = null){   //OOP to initialise an class
         this.data = data;
         this.left = left;
         this.right = right;
@@ -9,13 +9,13 @@ class Node {
 } 
 
 class BST {
-    constructor(){
-        this.root = null;
+    constructor(){  //OOP to initialise an class
+        this.root = null;   //1
     }
     add(data) {
-        const node = this.root;
-        if (node === null){
-            this.root = new Node(data);
+        const node = this.root; //2
+        if (node === null){   //3
+            this.root = new Node(data); //4
             return;
         }else {
             const searchTree = function(node) {
