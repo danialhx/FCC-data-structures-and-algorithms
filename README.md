@@ -54,12 +54,14 @@ Tuts McGee(aka Tutorials)
 
 <p>06 BST Traversal and Tree Height</p>
 <ol>
-  <li>adding new nodes according to size</li>
-  <li>finding nodes in tree</li>
-  <li>removing nodes in tree  <ol>
-    <li>1 children</li>
-    <li>2 children, this one quite a long recursion to achieve</li>
-  </ol></li>
-
+  <li>minHeight of tree</li>
+  <li>maxHeight of tree, difference min to max should be 1, more than 1 means tree is not balanced</li>
+  <li>searching through BST</li>
+    <ol>
+      <li>inOrder  -  left to right, disregard level</li>
+      <li>preOrder - roots before leaf(in to out), same branch priority, leftNode first</li>
+      <li>postOrder- leaf before roots(out to in), same branch priority,leftNode first</li>
+      <li>levelOrder - top first, leftNode first</li>
+    </ol>
 </ol>
 <hr>
