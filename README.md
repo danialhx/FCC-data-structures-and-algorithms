@@ -56,10 +56,10 @@ Tuts McGee(aka Tutorials)
 <ol>
   <li>adding new nodes according to size</li>
   <li>finding nodes in tree</li>
-  <li>removing nodes in tree</li>
-  <ol>
+  <li>removing nodes in tree  <ol>
     <li>1 children</li>
     <li>2 children, this one quite a long recursion to achieve</li>
-  </ol>
+  </ol></li>
+
 </ol>
 <hr>
