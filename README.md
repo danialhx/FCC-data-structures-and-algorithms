@@ -42,8 +42,24 @@ Tuts McGee(aka Tutorials)
 
 <p>05 Binary Search Tree</p>
 <ol>
-  <li>tba</li>
-  <li>tba</li>
-  <li>tba</li>
+  <li>adding new nodes according to size</li>
+  <li>finding nodes in tree</li>
+  <li>removing nodes in tree</li>
+  <ol>
+    <li>1 children</li>
+    <li>2 children, this one quite a long recursion to achieve</li>
+  </ol>
+</ol>
+<hr>
+
+<p>06 BST Traversal and Tree Height</p>
+<ol>
+  <li>adding new nodes according to size</li>
+  <li>finding nodes in tree</li>
+  <li>removing nodes in tree</li>
+  <ol>
+    <li>1 children</li>
+    <li>2 children, this one quite a long recursion to achieve</li>
+  </ol>
 </ol>
 <hr>
