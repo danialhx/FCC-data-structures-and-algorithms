@@ -2,3 +2,83 @@ Notes for https://www.youtube.com/watch?v=t2CEgPsws3U
 
 Exercise 5 Binary Search Tree
 
+Binary Search Tree(BST)
+-faster search compared to linear key parsing. as it can 
+- two child nodes removal is funny(not haha funny)
+
+eg. 3	  to remove 3, 			                           creating >>> 4
+   1 6	  6 needs to be hold as tempNode                                       1 6
+    4 7	  4 will be redefined as parent, and remove 4 as a  node.left		  7	
+
+class - vague definition, like a blue print
+
+class User{
+	constructor(firstName, lastName, credit){
+	     	this.firstName = firstName;
+		this.lastName = lastName;
+		this.credit = credit;
+		(method) User.getFullName(): void
+		
+  }
+	getFullName(){
+	let fullName = '${this.firstName} ${this.lastName0} is 		my full name';
+   	return fullName
+	//do this in just 1 line. 
+  }
+	editName(newName){
+	const myName = newname.split (' ');
+	this.firstName = myName[0];
+	this.lastName = myName[1];
+	//take a middle name too. 
+   }
+
+}
+
+
+const john = new User('John', 'Anderson', 34);
+//console.log(john);
+console.log('Johnny Anderson');
+
+
+/*const sammy = new User();
+console.log(sammy);*/
+
+VV  //this function is a blueprint 
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// a blue print of an object is known as a constructor
+
+var myFather = new Person("John", "Doe", 50, "blue");
+
+
+references
+1. https://www.youtube.com/watch?v=XPw7nQSmMqU - classes n objects in JS
+
+2. https://courses.learncodeonline.in/learn
+
+
+
+OBJECTS - https://www.youtube.com/watch?v=-P04pE6zRNE
+
+
+//below simple explanation;
+
+let myYoutubeVideo = {
+	title : 'Loops in Javascripts',
+	videoLength : 15,
+	videoCreator : 'Hitesh Choudhary',	
+	videoDescription: 'This is a video description and a long one',
+
+}//declare objects
+
+console.log(myYoutubeVideo)
+console.log('Hey new Video on ${myYoutubeVideo.title} by ${myYoutubeVideo.creator}
+
+CONSTRUCTORS
+-class based OOP, special type of subroutine
+
