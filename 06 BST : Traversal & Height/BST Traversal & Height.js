@@ -40,19 +40,19 @@ class BST {
             return searchTree(node)
         }
     }
-    findMin(){          //build function to make current go to the smallest number, built from node.left. new nodes for the lefts will be smaller
-        let current = this.root;        // below is recursive loop
-        while(current.left !== null){ //if have a number it will...
-            current = current.left;     //it will make current  as current left.
+    findMin(){                                          //build function to make current go to the smallest number, built from node.left. new nodes for the lefts will be smaller
+        let current = this.root;                        // below is recursive loop
+        while(current.left !== null){                   //if have a number it will...
+            current = current.left;                     //it will make current  as current left.
         }
-        return current.data;            //and show the leftest node
+        return current.data;                            //and show the leftest node
     }
-    findMax(){                      //function to find the rightest node
+    findMax(){                                          //function to find the rightest node
         let current = this.root;            
-        while(current.right !== null){          // loop for !empty right node 
-            current = current.right;            // change current for the rightest
+        while(current.right !== null){                  // loop for !empty right node 
+            current = current.right;                    // change current for the rightest
         }
-        return current.data;                    // return current.data
+        return current.data;                            // return current.data
     }
     find(data){
         let current = this.root;                //function to find
@@ -103,73 +103,73 @@ class BST {
                 // node has two children
                 var tempNode = node.right;                          //initialise right node as new tempnode for default
                 while (tempNode.left !== null) {                    //loop if left isn't empty, have smaller numbers
-                    tempNode = tempNode.left;                       //left childrens will be tempNode
+                    tempNode = tempNode.left;                       //changing nodes, left children will be tempNode
                 }
-                node.data = tempNode.data;                          //
-                node.right = removeNode(node.right, tempNode.data); //
-                return node;
-            } else if (data < node.data){
-                node.left = removeNode(node.left, data);
+                node.data = tempNode.data;                          // changing node data
+                node.right = removeNode(node.right, tempNode.data); // changing nodes
+                return node;                                
+            } else if (data < node.data){                           //if data smaller, than now node data
+                node.left = removeNode(node.left, data);            //not sure 1
                 return node;
             }else {
-                node.right = removeNode(node.right, data);
+                node.right = removeNode(node.right, data);          //not sure 2, should do the same thing as above
                 return node;
             }
         }
-        this.root = removeNode(this.root, data)
+        this.root = removeNode(this.root, data)                     // if bst.root has the data it will delete the root
     }
-    isBalanced(){
-        return(this.findMinHeight() >= this.findMaxHeight() - 1)
+    isBalanced(){                                                   // to check if BST is balanced, balanced bST have difference of 1 for maxHeight to minHeight
+        return(this.findMinHeight() >= this.findMaxHeight() - 1)    // true if Min is smaller than Max
     }
-    findMinHeight(node = this.root){
-        if (node == null) {
-            return -1
+    findMinHeight(node = this.root){                                // initialise node at bst.root
+        if (node == null) {                                         // empty tree
+            return -1                                               // will return -1
         };
-        let left = this.findMinHeight(node.left);
-        let right = this.findMinHeight(node.right);
-        if (left < right){
-            return left + 1;
-        }else{
-            return right + 1;
+        let left = this.findMinHeight(node.left);                   // going down the tree by left
+        let right = this.findMinHeight(node.right);                 // going down the tree by right
+        if (left < right){                                          // condition left bigger than right, meaning nodes with smaller numbers
+            return left + 1;                                        // increments left
+        }else{      
+            return right + 1;                                       // increments right
         };
     }
-    findMaxHeight(node = this.root){
-        if (node == null){
+    findMaxHeight(node = this.root){                        //initialise node at root
+        if (node == null){                                  //if root empty, return -1
             return -1;
         };
-        let left = this.findMaxHeight(node.left);
-        let right = this.findMaxHeight(node.right);
-        if (left > right){
-            return left +1;
+        let left = this.findMaxHeight(node.left);           //initialise left node
+        let right = this.findMaxHeight(node.right);         //initialise right node
+        if (left > right){                                  //if left count larger than
+            return left +1;                                 //increment left count
         }else{
-            return right +1;
+            return right +1;                                //increment right count
         };
     }
     inOrder(){
-        if (this.root == null){
-            return null;
-        } else {
-            var result = new Array ();
-            function traverseInOrder(node) {
-                node.left && traverseInOrder(node.left);      //shortcircuit evaluation
-                result.push(node.data);
-                node.right && traverseInOrder(node.right);
+        if (this.root == null){                             // empty root
+            return null;                                    // return null
+        } else {                                                
+            var result = new Array ();                          // change result with new Array
+            function traverseInOrder(node) {                    
+                node.left && traverseInOrder(node.left);        // this function will push a node, so the arrangement is left, root, right 
+                result.push(node.data);                         // this will create a left first array disregard of level going through the tree to the right
+                node.right && traverseInOrder(node.right);      
             }
-            traverseInOrder(this.root);
+            traverseInOrder(this.root);                         //when left and right
             return result;
         };   
     }
     preOrder(){
-        if(this.root == null){
-            return null;
-        }else {
-            var result = new Array();
-            function traversePreOrder(node){
-                result.push(node.data);
-                node.left && traversePreOrder(node.left);
-                node.right && traversePreOrder(node.right);
+        if(this.root == null){                                  // preOrder() is root to leaf 
+            return null;                                        //
+        }else {                                                             
+            var result = new Array();                           // initialise new array as result of this function
+            function traversePreOrder(node){                    // this function will push a node, arrangement is root, left, right
+                result.push(node.data);                         // root will be pushed
+                node.left && traversePreOrder(node.left);       // node.left will be pushed
+                node.right && traversePreOrder(node.right);     // node.right will be pushed
             };
-            traversePreOrder(this.root);
+            traversePreOrder(this.root);                        //not sure again. hehe
             return result;
         };
     }
@@ -213,7 +213,7 @@ class BST {
 
 const bst = new BST();
 
-bst.add(9);
+bst.add(9);             // building bst, bst is a node building function, with the data added it will create the bst.
 bst.add(4);
 bst.add(17);
 bst.add(3);
@@ -231,10 +231,13 @@ bst.add(10);
 console.log(bst.findMinHeight());
 console.log(bst.findMaxHeight());
 console.log(bst.isBalanced());
-console.log('inOrder: ' + bst.inOrder()); //left most node to right most node, regardless top or bottom
-console.log('preOrder: ' + bst.preOrder()); //roots nodes first before leafs, 
-console.log('pastOrder: ' + bst.postOrder());   //leaf nodes first before the roots
-console.log('levelOrder: ' + bst.levelOrder());  //breadth first search, search level by level
+console.log('inOrder: ' + bst.inOrder());           //left most node to right most node, regardless top or bottom
+console.log('preOrder: ' + bst.preOrder());         //roots nodes first before leafs, 
+console.log('postOrder: ' + bst.postOrder());       //leaf nodes first before the roots
+console.log('levelOrder: ' + bst.levelOrder());     //breadth first search, search level by level
+console.log(bst.root)
+
+
 
 
 /* BST
