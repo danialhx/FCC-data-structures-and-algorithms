@@ -173,15 +173,15 @@ class BST {
             return result;
         };
     }
-    postOrder(){
-        if(this.root == null){
+    postOrder(){                                                // postOrder() leaf to root  
+        if(this.root == null){                                  // if empty
             return null;
-        }else {
-            var result = new Array();
-            function traversePostOrder(node){
-                node.left && traversePostOrder(node.left);
-                node.right && traversePostOrder(node.right);
-                result.push(node.data);
+        }else {                                                 // else not empty loop
+            var result = new Array();                           // make new array as result
+            function traversePostOrder(node){                   // function to traverse leaf first, the node will be pushed
+                node.left && traversePostOrder(node.left);      // pushing left node first
+                node.right && traversePostOrder(node.right);    // pushing right node first
+                result.push(node.data);                         // when no leaf i
             };
             traversePostOrder(this.root);
             return result;
@@ -191,7 +191,7 @@ class BST {
         levelOrder(){
             let result = [];
             let Q=[];
-            if(this.root != null){
+            if(this.root != null){                  // if not empty proceed with function
                 Q.push(this.root);                  
                 while(Q.length > 0){                //loop while tree has data
                     let node = Q.shift();           //remove first in the array
@@ -203,9 +203,9 @@ class BST {
                         Q.push(node.right);         //push bigger number
                     };
                 };
-                return result;   
+                return result;                      // levelOrder() array
             }else{
-                return null;
+                return null;                        // else return null
             };   
         };
     }
@@ -231,17 +231,24 @@ bst.add(10);
 console.log(bst.findMinHeight());
 console.log(bst.findMaxHeight());
 console.log(bst.isBalanced());
-console.log('inOrder: ' + bst.inOrder());           //left most node to right most node, regardless top or bottom
+console.log('inOrder: ' + bst.inOrder());           //left most node to right most node, regardless top or bottom. will issue number orderly increase
 console.log('preOrder: ' + bst.preOrder());         //roots nodes first before leafs, 
 console.log('postOrder: ' + bst.postOrder());       //leaf nodes first before the roots
 console.log('levelOrder: ' + bst.levelOrder());     //breadth first search, search level by level
-console.log(bst.root)
+//console.log(bst.root)
 
 
 
 
 /* BST
-            9
+            9           *isBalanced False
+         4      17
+       3  6       22
+        5  7    20
+
+
+post add(10)
+            9           *isBalanced True
          4      17
        3  6   10  22
         5  7    20
