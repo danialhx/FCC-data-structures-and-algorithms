@@ -75,57 +75,57 @@ function LinkedList() {
         var count = 0;                                 // initialise count at 0
         while (count < index){                         // while less than index, as per stated for the element 
             count ++;                                  // increment count
-            currentNode = currentNode.next;            //
+            currentNode = currentNode.next;            // move the next node to current node
         }
-        return currentNode.element;
+        return currentNode.element;                    // while loop stops as index is reached and will issue the currentNode the loops stops at, according to the index
     };
 
 
-    this.addAt = function(index, element){
-        var node = new Node(element);
+    this.addAt = function(index, element){              // adding an element at a certain index
+        var node = new Node(element);                   // new node with the element
 
-        var currentNode = head;
-        var previousNode;
-        var currentIndex = 0;
+        var currentNode = head;                         // initialise at the head
+        var previousNode;                               // initialise previous node
+        var currentIndex = 0;                           // initialise index
         
-        if (index > length){
-            return false;
+        if (index > length){                            // will not start the function except returning false
+            return false;                                       
         }
 
-        if(index === 0){
-            node.next = currentNode;
-            head = node;
+        if(index === 0){                                // when starts at the head
+            node.next = currentNode;                    // initialise next as current node
+            head = node;                                // and the node as the head
         }else {
-            while(currentIndex < index) {
-                currentIndex++;
-                previousNode = currentNode;
-                currentNode = currentNode.next;
+            while(currentIndex < index) {               // for post index 0
+                currentIndex++;                         // increment index
+                previousNode = currentNode;             // changing the nodes, as the element is added
+                currentNode = currentNode.next;         // changing the nodes
             }
-            node.next = currentNode;
+            node.next = currentNode;                    
             previousNode.next = node;
-        }
-        length++;
+        }  
+        length++;                                        // increment length as new element added
     }
 
-    this.removeAt = function(index) {
+    this.removeAt = function(index) {                    // similar to .addAt  
         var currentNode = head;
         var previousNode;
         var currentIndex = 0;
-        if (index < 0 || index >= length){
+        if (index < 0 || index >= length){              // will not move, and return null
             return null;
         }
-        if(index === 0){
-            head = currentNode.next;
+        if(index === 0){                                // starts at head
+            head = currentNode.next;                    // next node will be the head
         } else {
-            while (currentIndex < Index){
-                currentIndex ++;
-                previousNode = currentNode;
-                currentNode = currentNode.next;
+            while (currentIndex < index){               // after head 
+                currentIndex ++;                        // using loop to move through
+                previousNode = currentNode;             // changing nodes post removal
+                currentNode = currentNode.next;         // changing nodes post removal
             }
-            previousNode.next = currentNode.next; 
+            previousNode.next = currentNode.next;       // changing the nodes post removal
         }
-        length--;
-        return currentNode.element;
+        length--;                                       // decrease the length 
+        return currentNode.element;                     // 
     }
 }
 
