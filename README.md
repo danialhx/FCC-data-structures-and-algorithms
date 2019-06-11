@@ -1,5 +1,6 @@
 # FCC-data-structures-and-algorithms
 Tuts McGee(aka Tutorials)
+<h5>Data Structures is important for performance with large amounts of data, ie above 10k</h5>
 
 
 <h1><a href="https://www.youtube.com/watch?v=t2CEgPsws3U">Data Structures and Algorithms</a></h1>
