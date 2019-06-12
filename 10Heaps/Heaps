@@ -1,0 +1,8 @@
+min heaps roots smaller than child. 
+max heaps roots larger than child.
+
+binary heaps, are like BST
+
+heaps can be issued like arrays. heaps has no index 0 = null.
+
+most efficient heap sort, in big O 
