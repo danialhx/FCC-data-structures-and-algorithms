@@ -1,0 +1,69 @@
+Graph collection of things
+
+traversal algorithm, to find distance of graphs.
+
+1. nodes/vertices - connected by edges - to another node/vertices
+
+	social networks - people are nodes and the edges are the friend status between 2 nodes
+
+2. 
+Directed Graphs - edges has particular direction
+-internet - nodes are webpages, directed edges is the link to another webpages, which may not direct to the previous pages/
+
+undirected Graphs - edges without directions
+-social network
+
+3. Three way to represent Graph
+A.
+Adjency List
+
+with text -  
+Node A : Node B
+Node B : Node A, Node C
+Node C : Node B
+
+with JS - 
+var undirectedG = {
+NodeA : ["NodeB"],
+NodeB : ["NodeA","NodeC"],
+NodeC : ["NodeB"],
+};
+
+or with JS - 
+var undirectedGArr = {
+[1], //Node A
+[0,2] //Node A
+[1], //Node A
+};
+
+B.
+Adjency Matrix
+ - 1 means there is an edge, 0 means there is no edge
+-undirected Adjency Matrix
+var adjMat = [
+	[0,1,0], 
+	[1,0,1], 
+	[0,1,0], 
+	];
+
+-directed Adjency Matrix (a<b<c edge is one direction, so the matrix remove2 edges for a>b>c)
+var adjMat = [
+	[0,0,0], 
+	[1,0,0], 
+	[0,1,0], 
+	];
+
+
+C. 
+Incidence Matrix
+-2dimensional array
+-row to represent nodes, columns to represent edges
+
+directed graph the matrix will ie. - edge 1 b>c, b will have 1 value on edge column, where c will have value -1 on edge 1 column
+
+
+
+Algo, 
+
+breadth first search
+
